@@ -39,12 +39,16 @@ function animateHeart() {
     document.body.appendChild(heart);
 
     setTimeout(() => {
-        heart.style.animation = 'heartPulse 0.8s ease-in-out';
+        heart.style.animation = 'heartPulse 0.8s ease-in-out infinite';
     }, 10);
 
     setTimeout(() => {
-        heart.remove();
-    }, 800);
+        heart.style.animation = 'fadeOut 1s ease-in-out forwards';
+    }, 800); 
+
+    setTimeout(() => {
+        heart.remove(); 
+    }, 1800); 
 }
 
 button.addEventListener('click', function() {
