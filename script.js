@@ -54,9 +54,10 @@ function animateHeart() {
 button.addEventListener('click', function() {
     const randomMessage = messages[Math.floor(Math.random() * messages.length)];
     messageElement.textContent = randomMessage;
-
-    document.body.style.transition = 'background 1s ease-in-out';
-    document.body.style.background = getRandomGradient();
-
+    requestAnimationFrame(updateBackground);
     animateHeart();
 });
+
+function updateBackground() {
+    document.body.style.background = getRandomGradient();
+}
